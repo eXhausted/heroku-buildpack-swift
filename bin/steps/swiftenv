@@ -10,3 +10,6 @@ eval "$(swiftenv init -)"
 if ! [ -f "$BUILD_DIR/.swift-version" ] && [ -z "$SWIFT_VERSION" ]; then
   export SWIFT_VERSION="$DEFAULT_SWIFT_VERSION"
 fi
+
+mkdir -p $BUILD_DIR/.swift-lib
+cp ./lib/*.so.1 $BUILD_DIR/.swift-lib
